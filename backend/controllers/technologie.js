@@ -27,7 +27,8 @@ exports.addTechnologie = (req, res, next) => {
 
 exports.updateTechnologie = (req, res, next) => {
   const libelle = req.body.libelle;
-  const technologie_id = req.params.id;
+  const id = req.params.id;
+  const technologie_id = parseInt(id);
   connection.query(
     "update technologie set libelle = ? where technologie_id = ?",
     [libelle, technologie_id],
